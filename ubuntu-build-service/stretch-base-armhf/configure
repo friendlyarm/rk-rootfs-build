@@ -11,6 +11,16 @@ set -e
 echo "I: create configuration"
 export LB_BOOTSTRAP_INCLUDE="apt-transport-https gnupg"
 lb config \
+ --mirror-binary http://ftp2.cn.debian.org/debian/ \
+ --mirror-bootstrap http://ftp2.cn.debian.org/debian/ \
+ --mirror-chroot-backports http://ftp2.cn.debian.org/debian-backports/ \
+ --parent-mirror-bootstrap http://ftp2.cn.debian.org/debian/ \
+ --parent-mirror-chroot http://ftp2.cn.debian.org/debian/ \
+ --parent-mirror-chroot-volatile http://ftp2.cn.debian.org/debian/ \
+ --parent-mirror-chroot-security http://ftp2.cn.debian.org/debian-security/ \
+ --parent-mirror-binary http://ftp2.cn.debian.org/debian/ \
+ --parent-mirror-binary-security http://ftp2.cn.debian.org/debian-security/ \
+ --parent-mirror-chroot-backports http://ftp2.cn.debian.org/debian-backports/ \
  --apt-indices false \
  --apt-recommends false \
  --apt-secure false \
